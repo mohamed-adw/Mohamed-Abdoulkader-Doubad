@@ -1,101 +1,101 @@
 # Système de Gestion Scolaire
 
-Un système modulaire de gestion scolaire développé en TypeScript avec IndexedDB.
+Un système flexible de gestion scolaire conçu en TypeScript avec IndexedDB, permettant une gestion complète des étudiants, enseignants, cours, ressources et services.
 
-## 🚀 Installation
+## 🚀 Guide d'Installation
 
-1. Cloner le repository
+1. Cloner le projet
 ```bash
 git clone [url-du-repo]
 cd gestion-scolaire
-```
 
-2. Installer les dépendances
-```bash
+
+2 . Installer les dépendances nécessaires
+
 npm install
-```
 
-3. Lancer le projet en mode développement
-```bash
-npm run dev
-```
+3 . Démarrer le serveur en mode développement
 
-## 🏗️ Architecture
+npm run start
 
-Le projet suit une architecture modulaire basée sur les design patterns suivants :
+Ce projet est organisé de manière modulaire pour favoriser la réutilisation et la flexibilité, en appliquant plusieurs modèles de conception.
 
-### Design Patterns Utilisés
+Principaux Modèles de Conception
+Singleton Pattern
 
-1. **Singleton Pattern**
-   - Implémenté dans `ResourceManager` et `Database`
-   - Assure une instance unique pour la gestion des ressources et la base de données
+Implémenté dans ResourceManager et Database pour garantir qu'une seule instance de gestion des ressources et de la base de données existe dans l'application.
 
-2. **Factory Pattern**
-   - Implémenté dans `CourseFactory`
-   - Permet la création flexible de différents types de cours
+Factory Pattern
 
-3. **Decorator Pattern**
-   - Implémenté dans `ServiceDecorator`
-   - Permet d'ajouter dynamiquement des services aux élèves
+Implémenté dans CourseFactory pour permettre la création d'instances de cours de manière flexible, en fonction des besoins.
 
-### Structure des Dossiers
+Decorator Pattern
 
-```
+Utilisé dans ServiceDecorator pour ajouter dynamiquement des services à un étudiant, comme le tutorat ou l'activité physique.
+
+Organisation des Dossiers
+
 src/
-├── database/         # Gestion de la base de données IndexedDB
-├── interfaces/       # Définitions des interfaces
-├── managers/         # Gestionnaires (ResourceManager, etc.)
-├── factories/        # Factories pour la création d'objets
-├── decorators/       # Decorators pour les services
-└── models/          # Classes de base
-```
+├── database/         # Gestion des données avec IndexedDB
+├── interfaces/       # Définitions des types et interfaces
+├── managers/         # Gestion des ressources et base de données
+├── factories/        # Création d'objets via des factories
+├── decorators/       # Ajout dynamique de fonctionnalités via des decorators
+└── models/           # Modèles de base représentant les entités
 
-### Base de Données
 
-Le projet utilise IndexedDB avec les stores suivants :
-- eleves
-- enseignants
-- cours
-- ressources
-- services
+Base de Données
+Ce système utilise IndexedDB pour stocker et gérer les données suivantes :
 
-## 📝 Fonctionnalités
+Élèves : Informations sur les étudiants
 
-1. **Gestion des Élèves**
-   - Inscription
-   - Association aux cours
-   - Ajout de services supplémentaires
+Enseignants : Détails des enseignants
 
-2. **Gestion des Cours**
-   - Création via Factory
-   - Association aux enseignants
-   - Différents types (Math, Histoire, Science)
+Cours : Cours disponibles dans le système
 
-3. **Gestion des Ressources**
-   - Système de réservation
-   - Suivi de disponibilité
-   - Types variés (salles, matériel, fournitures)
+Ressources : Ressources matérielles (salles, équipements, etc.)
 
-4. **Services Supplémentaires**
-   - Tutorat
-   - Sport
-   - Art
+Services : Services proposés (tutorat, sport, art)
 
-## 🔧 Technologies
 
-- TypeScript
-- IndexedDB
-- Design Patterns
-- Programmation Orientée Objet
 
-## 🧪 Tests
+Fonctionnalités
+Gestion des Élèves
 
-Pour lancer les tests :
-```bash
+Inscription, suivi des cours et ajout de services personnalisés.
+
+Gestion des Cours
+
+Création dynamique des cours via la factory et attribution aux enseignants.
+
+Gestion des Ressources
+
+Réservation et gestion des disponibilités des ressources.
+
+Services Extra
+
+Ajout de services tels que le tutorat, les sports et les activités artistiques.
+
+
+
+
+Technologies Utilisées
+TypeScript
+
+IndexedDB
+
+Design Patterns (Singleton, Factory, Decorator)
+
+Programmation Orientée Objet
+
+
+
+
+
+Exécution des Tests
+Pour exécuter les tests unitaires et valider le bon fonctionnement du projet, utilisez la commande suivante :
+
 npm test
-```
 
-## 📚 Documentation
 
-La documentation complète du code est disponible dans les fichiers source.
-Chaque classe et méthode importante est documentée avec des commentaires JSDoc. 
+
